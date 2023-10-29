@@ -53,7 +53,5 @@
                         >;
                 };
         };
-        chosen {
-                zmk,backlight = &backlight;
-        };
+        
 };
