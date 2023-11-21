@@ -74,7 +74,7 @@
             bindings = <
 &trans  &kp ESCAPE     &trans      &kp UP    &kp RG(RA(LEFT_BRACKET))  &kp RG(RA(RIGHT_BRACKET))    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans         &kp LEFT    &kp DOWN  &kp RIGHT                 &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp BACKSPACE  &kp DELETE  &trans    &trans                    &kp RG(PERIOD)               &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp BACKSPACE  &kp DELETE  &trans    &kp RETURN                &kp RG(PERIOD)               &trans  &trans  &trans  &trans  &trans  &trans
                                    &trans    &trans                    &trans                       &trans  &trans  &trans
             >;
         };
