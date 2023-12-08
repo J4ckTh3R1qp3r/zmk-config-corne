@@ -26,7 +26,56 @@
         compatible = "zmk,battery-nrf-vddh";
         label = "VBATT";
     };
-
+    behaviors {
+        grp: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <17>;
+            tapping-term-ms = <200>;
+            bindings = <&kp G>, <&kp LG(G)>, <&kp LG(LSHFT(G))>;
+        };
+        sav: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <14>;
+            tapping-term-ms = <200>;
+            bindings = <&kp S>, <&kp LG(S)>;
+        };
+        auto: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <13>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LSHFT A>, <&kp LSHFT(A)>;
+        };
+        und: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <25>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LC Z>, <&kp LG(Z)>;
+        };
+        cut: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <25>;
+            tapping-term-ms = <200>;
+            bindings = <&kp X>, <&kp LG(X)>;
+        };
+        cop: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <27>;
+            tapping-term-ms = <200>;
+            bindings = <&kp C>, <&kp LG(C)>;
+        };
+        pst: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <28>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>, <&kp LG(V)>;
+        };
+        l1s: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <38>;
+            tapping-term-ms = <200>;
+            bindings = <&lt 1 SPACE>, <&kp RET>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -39,9 +88,9 @@
 
             bindings = <
 &kp LEFT_ALT  &kp Q  &kp W  &kp E                              &kp R  &kp T          &kp Y    &kp U  &kp I       &kp O    &kp P     &kp BSPC
-&kp LSHIFT    &kp A  &kp S  &kp D                              &kp F  &kp G          &kp H    &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LGUI      &kp Z  &kp X  &kp C                              &kp V  &kp B          &kp N    &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp DELETE
-                            &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mo 2  &lt 1 SPACE    &kp RET  &mo 2  &kp K_MUTE
+&kp LSHIFT    &auto  &sav  &kp D                              &kp F  &grp          &kp H    &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LGUI      &und  &cut  &cop                              &pst  &kp B          &kp N    &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp DELETE
+                            &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mo 2  &l1s    &kp RET  &mo 2  &kp K_MUTE
             >;
 
             sensor-bindings =
