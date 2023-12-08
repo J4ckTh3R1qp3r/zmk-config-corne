@@ -33,43 +33,43 @@
             tapping-term-ms = <200>;
             bindings = <&kp G>, <&kp LG(G)>, <&kp LG(LS(G))>;
         };
-        sav: tap_dance_0 {
+        sav: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <14>;
             tapping-term-ms = <200>;
             bindings = <&kp S>, <&kp LG(S)>;
         };
-        auto: tap_dance_mod_tap {
+        auto: tap_dance_mod_tap_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <13>;
             tapping-term-ms = <200>;
             bindings = <&mt LSHFT A>, <&kp LS(A)>;
         };
-        und: tap_dance_mod_tap {
+        und: tap_dance_mod_tap_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <25>;
             tapping-term-ms = <200>;
             bindings = <&mt LCTRL Z>, <&kp LG(Z)>;
         };
-        cut: tap_dance_mod_tap {
+        cut: tap_dance_mod_tap_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <25>;
             tapping-term-ms = <200>;
             bindings = <&kp X>, <&kp LG(X)>;
         };
-        cop: tap_dance_0 {
+        cop: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <27>;
             tapping-term-ms = <200>;
             bindings = <&kp C>, <&kp LG(C)>;
         };
-        pst: tap_dance_0 {
+        pst: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <28>;
             tapping-term-ms = <200>;
             bindings = <&kp V>, <&kp LG(V)>;
         };
-        l1s: tap_dance_mod_tap {
+        l1s: tap_dance_mod_tap_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <38>;
             tapping-term-ms = <200>;
