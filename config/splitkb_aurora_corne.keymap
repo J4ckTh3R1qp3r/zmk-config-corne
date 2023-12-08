@@ -74,24 +74,55 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 1 SPACE>, <&kp RET>;
+            bindings = <&mo 2>, <&kp RET>;
+        };
+        pbracket: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp P>, <&kp LEFT_BRACKET>;
+        };
+        mbracket: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp M>, <&kp RIGHT_BRACKET>;
+        };
+        commads: tap_dance_mod_tap_4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt QUESTION COMMA>, <&kp KP_COMMA>;
+        };
+        dotds: tap_dance_mod_tap_5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt EXCL DOT>, <&kp KP_DOT>;
+        };
+        minusds: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_MINUS>, <&kp KP_SLASH>;
+        };
+        plusds: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_PLUS>, <&kp KP_MULTIPLY>;
         };
     };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LEFT_ALT  &kp Q  &kp W  &kp E                              &kp R  &kp T          &kp Y    &kp U  &kp I       &kp O    &kp P     &kp BSPC
-&kp LSHIFT    &auto  &sav  &kp D                              &kp F  &grp          &kp H    &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LGUI      &und  &cut  &cop                              &pst  &kp B          &kp N    &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp DELETE
-                            &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mo 2  &l1s    &kp RET  &mo 2  &kp K_MUTE
+&kp LEFT_ALT  &kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y    &kp U  &kp I       &kp O    &pbracket     &kp BSPC
+&kp LSHIFT    &auto  &sav   &kp D  &kp F  &grp        &kp H    &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LGUI      &und   &cut   &cop   &pst   &kp B       &kp N    &mbracket  &commads   &dotds  &kp FSLH  &kp DELETE
+              &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &l1s  &lt 1 SPACE    &lt 1 RET  &mo 2  &kp K_MUTE
             >;
 
             sensor-bindings =
@@ -100,32 +131,22 @@
         };
 
         lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp LALT   &kp NUMBER_7  &kp N8        &kp N9        &kp NUMBER_0    &kp BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT    &kp RG(C_AL_LOCK)  &trans
-&trans  &kp LSHFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MINUS    &kp SQT        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp DOLLAR         &trans
-&trans  &kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_PLUS     &kp UNDER      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp LG(SPACE)      &trans
-                                 &trans        &trans        &trans          &trans         &trans                &trans
+&trans  &kp LALT   &mt RG(PERIOD) NUMBER_7  &kp N8        &kp N9        &mt KP_EQUAL NUMBER_0    &kp BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT    &kp RG(C_AL_LOCK)  &trans
+&trans  &kp LSHFT  &mt RG(RS(RC(NUMBER_4))) NUMBER_4  &mt RG(RA(LEFT_BRACKET)) N5 &mt RG(RA(RIGHT_BRACKET)) NUMBER_6  &minusds                 &mt TILDE SQT        &mt AT_SIGN LEFT_PARENTHESIS  &mt HASH RIGHT_PARENTHESIS  &mt CARET AMPERSAND  &kp DOLLAR         &trans
+&trans  &kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &plusds                  &kp UNDER      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp LG(SPACE)      &trans
+                                 &none        &trans        &trans                   &trans         &trans                &none
             >;
         };
 
         raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+            
             bindings = <
-&trans  &trans  &kp ESCAPE      &kp UP_ARROW    &trans           &kp BACKSPACE        &bt BT_CLR         &trans            &bt BT_PRV         &bt BT_NXT       &trans  &trans
-&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans               &trans             &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &ext_power EP_TOG    &ext_power EP_TOG  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &trans  &trans
-                                &trans          &trans           &trans               &trans             &trans            &trans
+&trans  &none  &kp ESCAPE      &kp UP_ARROW    &none           &kp BACKSPACE        &bt BT_CLR         &trans            &bt BT_PRV         &bt BT_NXT       &none  &none
+&trans  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none               &none             &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none  &none
+&trans  &none  &none          &none          &none           &ext_power EP_TOG    &ext_power EP_TOG  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none  &none
+                                &none          &trans           &trans               &trans             &trans            &none
             >;
         };
     };
