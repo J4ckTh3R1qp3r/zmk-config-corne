@@ -30,96 +30,12 @@
     };
     behaviors {
         //17,14,13,25,26,27,28,38
-        grp: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp G>, <&kp LG(G)>, <&kp LG(LS(G))>;
-        };
-        sav: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp S>, <&kp LG(S)>;
-        };
-        auto: tap_dance_mod_tap_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHFT A>, <&kp LS(A)>;
-        };
-        und: tap_dance_mod_tap_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LCTRL Z>, <&kp LG(Z)>;
-        };
-        cut: tap_dance_mod_tap_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp X>, <&kp LG(X)>;
-        };
-        cop: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp C>, <&kp LG(C)>;
-        };
-        pst: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp V>, <&kp LG(V)>;
-        };
         l1s: tap_dance_mod_tap_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 2>, <&kp RET>;
-        };
-        pbracket: tap_dance_4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp LEFT_BRACKET>;
-        };
-        mbracket: tap_dance_5 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp M>, <&kp RIGHT_BRACKET>;
-        };
-        commads: tap_dance_mod_tap_4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt QUESTION COMMA>, <&kp KP_COMMA>;
-        };
-        dotds: tap_dance_mod_tap_5 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt EXCL DOT>, <&kp KP_DOT>;
-        };
-        minusds: tap_dance_6 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp KP_MINUS>, <&kp KP_SLASH>;
-        };
-        plusds: tap_dance_7 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp KP_PLUS>, <&kp KP_MULTIPLY>;
-        };
-        semids: tap_dance_8 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SEMI>, <&kp SQT>;
-        };
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&mo 1>, <&kp RET>;
+                };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -151,3 +67,4 @@
 
     };
 };
+  
