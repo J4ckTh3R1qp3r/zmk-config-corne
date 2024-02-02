@@ -147,12 +147,11 @@
         };
 
         raise_layer {
-            
             bindings = <
-&trans  &none  &kp ESCAPE      &kp UP_ARROW    &none           &kp BACKSPACE        &bt BT_CLR         &trans            &bt BT_PRV         &bt BT_NXT       &none  &none
-&trans  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none               &none             &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none  &none
-&trans  &none  &none          &none          &none           &ext_power EP_TOG    &ext_power EP_TOG  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &none  &none
-                                &none          &trans           &trans               &trans             &trans            &none
+&trans  &none  &kp ESCAPE      &kp UP_ARROW    &none            &kp BACKSPACE        &bt BT_CLR         &trans            &bt BT_PRV         &bt BT_NXT       &rgb_ug RGB_EFF  &none
+&trans  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none                &none              &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &rgb_ug RGB_BRI  &none
+&trans  &none  &none           &none           &none            &ext_power EP_TOG    &ext_power EP_TOG  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &rgb_ug RGB_TOG  &none
+                               &none           &trans           &trans               &trans             &trans            &none
             >;
         };
     };
