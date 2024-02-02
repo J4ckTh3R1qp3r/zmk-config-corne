@@ -6,7 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -29,7 +28,6 @@
         label = "VBATT";
     };
     behaviors {
-        //17,14,13,25,26,27,28,38
         l1s: tap_dance_mod_tap_3 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
@@ -60,11 +58,10 @@
                         bindings = <
                         &kp LALT    &kp TAB         &kp UP_ARROW    &none            &kp BACKSPACE        &kp K_MUTE         &kp C_VOLUME_DOWN &kp C_VOLUME_UP    &none            &kp BACKSPACE   
                         &kp LSHFT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp ESCAPE           &none              &none             &none              &none            &none  
-                        &kp LCTRL   &none           &none           &none            &none                &ext_power EP_TOG  &none             &none              &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  
+                        &kp LCTRL   &none           &none           &none            &none                &none              &none             &none              &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  
                                                     &trans          &trans           &trans               &trans             &trans            &trans
                         >;
                 };
 
     };
 };
-  
