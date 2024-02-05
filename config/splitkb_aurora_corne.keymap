@@ -13,11 +13,12 @@
 &led_strip {
     chain-length = <24>;
 };
-
 &nice_view_spi {
     cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
 };
-
+&mt {
+    flavor = "tap-preferred";
+};
 / {
     chosen {
         zmk,matrix_transform = &five_column_transform;
